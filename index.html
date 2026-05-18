@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="ECCV 2026 Tutorial: Efficient MLLM Inference via Approximated and Exact Computing."
+    />
+    <title>Efficient MLLM Inference | ECCV 2026 Tutorial</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Efficient MLLM Inference">
+        <span>ECCV 2026 Tutorial</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="#overview">Overview</a>
+        <a href="#organizers">Organizers</a>
+        <a href="#topics">Topics</a>
+        <a href="#speakers">Speakers</a>
+        <a href="#schedule">Schedule</a>
+        <a href="#materials">Materials</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">ECCV 2026 Tutorial | Sep 8 AM</p>
+            <h1>
+              <span>Efficient MLLM Inference</span>
+              <span>via Approximated and</span>
+              <span>Exact Computing</span>
+            </h1>
+            <p class="hero-subtitle">
+              A systematic tutorial on efficient MLLM inference.
+            </p>
+            <div class="hero-actions">
+              <a class="button primary" href="#schedule">View Schedule</a>
+              <a class="button secondary" href="#organizers">Meet Organizers</a>
+            </div>
+          </div>
+
+          <aside class="hero-panel" aria-label="Tutorial quick facts">
+            <div class="panel-topline">Tutorial Information</div>
+            <div class="fact-row">
+              <span>Date</span>
+              <strong>Sep 8, 2026</strong>
+            </div>
+            <div class="fact-row">
+              <span>Time</span>
+              <strong>Morning Session</strong>
+            </div>
+            <div class="fact-row">
+              <span>Room</span>
+              <strong>TBD</strong>
+            </div>
+            <div class="fact-row">
+              <span>Location</span>
+              <strong>Malmö, Sweden</strong>
+            </div>
+            <div class="theme-strip">
+              <span>Compression</span>
+              <span>Serving</span>
+              <span>Systems</span>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section intro-band" id="overview">
+        <div class="section-heading centered compact-heading">
+          <h2>Overview</h2>
+        </div>
+        <div class="overview-copy">
+          <p>
+            Multimodal large language models have advanced rapidly, but their inference cost remains
+            a major barrier for cloud serving and edge deployment. The cost comes from massive model
+            parameters, long multimodal contexts, attention complexity, and memory-bound execution on
+            modern hardware.
+            This tutorial frames efficient MLLM inference through two complementary lenses:
+            approximated computing, which reduces model and data redundancy while preserving
+            practical utility, and exact computing, which accelerates inference through system and
+            hardware optimization without changing model outputs.
+          </p>
+        </div>
+      </section>
+
+      <section class="section organizers-section" id="organizers">
+        <div class="section-heading centered compact-heading">
+          <p class="section-kicker">Organizers</p>
+          <h2>Organizers</h2>
+        </div>
+        <div class="organizer-grid">
+          <a class="organizer-card" href="https://huanwang.tech/" aria-label="Huan Wang homepage">
+            <div class="avatar"><img src="assets/bio/huanwang.jpg" alt="Huan Wang" /></div>
+            <h3>Huan Wang</h3>
+            <p>Westlake University</p>
+          </a>
+          <a class="organizer-card" href="https://canqin.tech/" aria-label="Can Qin homepage">
+            <div class="avatar"><img src="assets/bio/canqin.jpg" alt="Can Qin" /></div>
+            <h3>Can Qin</h3>
+            <p>Google</p>
+          </a>
+          <a class="organizer-card" href="https://faculty.ucmerced.edu/mhyang/" aria-label="Ming-Hsuan Yang homepage">
+            <div class="avatar"><img src="assets/bio/mhyang2.jpg" alt="Ming-Hsuan Yang" /></div>
+            <h3>Ming-Hsuan Yang</h3>
+            <p>UC Merced</p>
+          </a>
+          <a class="organizer-card" href="https://pmolchanov.com/" aria-label="Pavlo Molchanov homepage">
+            <div class="avatar"><img src="assets/bio/pavlo.png" alt="Pavlo Molchanov" /></div>
+            <h3>Pavlo Molchanov</h3>
+            <p>NVIDIA</p>
+          </a>
+          <a class="organizer-card" href="https://wonmin-byeon.github.io/" aria-label="Wonmin Byeon homepage">
+            <div class="avatar"><img src="assets/bio/wonmin.jpg" alt="Wonmin Byeon" /></div>
+            <h3>Wonmin Byeon</h3>
+            <p>NVIDIA</p>
+          </a>
+          <a class="organizer-card" href="https://www.biostat.wisc.edu/~vsingh/" aria-label="Vikas Singh homepage">
+            <div class="avatar"><img src="assets/bio/vikas.jpg" alt="Vikas Singh" /></div>
+            <h3>Vikas Singh</h3>
+            <p>University of Wisconsin-Madison</p>
+          </a>
+          <a class="organizer-card" href="https://research.google/people/105588/?&type=google" aria-label="Li Zhang homepage">
+            <div class="avatar"><img src="assets/bio/lizhang.png" alt="Li Zhang" /></div>
+            <h3>Li Zhang</h3>
+            <p>Google</p>
+          </a>
+          <a class="organizer-card" href="https://pages.cs.wisc.edu/~mucai/" aria-label="Mu Cai homepage">
+            <div class="avatar"><img src="assets/bio/mucai.jpg" alt="Mu Cai" /></div>
+            <h3>Mu Cai</h3>
+            <p>Google DeepMind</p>
+          </a>
+          <a class="organizer-card" href="https://hxyou.github.io/" aria-label="Haoxuan You homepage">
+            <div class="avatar"><img src="assets/bio/haoxuan.jpg" alt="Haoxuan You" /></div>
+            <h3>Haoxuan You</h3>
+            <p>Apple</p>
+          </a>
+          <a class="organizer-card" href="https://eclipsess.github.io/yangsui.github.io/" aria-label="Yang Sui homepage">
+            <div class="avatar"><img src="assets/bio/yangsui.jpg" alt="Yang Sui" /></div>
+            <h3>Yang Sui</h3>
+            <p>Microsoft AI</p>
+          </a>
+          <a class="organizer-card" href="https://42shawn.github.io/" aria-label="Yuzhang Shang homepage">
+            <div class="avatar"><img src="assets/bio/yuzhang.jpg" alt="Yuzhang Shang" /></div>
+            <h3>Yuzhang Shang</h3>
+            <p>University of Central Florida</p>
+          </a>
+          <a class="organizer-card" href="https://kd-tao.github.io/" aria-label="Keda Tao homepage">
+            <div class="avatar"><img src="assets/bio/keda.png" alt="Keda Tao" /></div>
+            <h3>Keda Tao</h3>
+            <p>Westlake University</p>
+          </a>
+          <a class="organizer-card" href="https://cokeshao.github.io/" aria-label="Kele Shao homepage">
+            <div class="avatar"><img src="assets/bio/kele.jpg" alt="Kele Shao" /></div>
+            <h3>Kele Shao</h3>
+            <p>Westlake University</p>
+          </a>
+        </div>
+      </section>
+
+      <section class="section" id="topics">
+        <div class="section-heading centered">
+          <p class="section-kicker">Technical Program</p>
+          <h2>Three Main Topic</h2>
+        </div>
+        <div class="topic-grid">
+          <article class="topic-card">
+            <div class="topic-index">01</div>
+            <h3>Model Compression</h3>
+            <p>
+              Quantization, sparsity, and low-rank decomposition for reducing model redundancy in
+              MLLM inference.
+            </p>
+          </article>
+          <article class="topic-card">
+            <div class="topic-index">02</div>
+            <h3>Token Efficiency</h3>
+            <p>
+              Training & training-frree compression methods for long multimodal inputs and
+              autoregressive generation.
+            </p>
+          </article>
+          <article class="topic-card">
+            <div class="topic-index">03</div>
+            <h3>System-Level Design</h3>
+            <p>
+              Exact computing methods and inference framework that improve inference throughput and latency without changing
+              the computed result.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section speakers-section" id="speakers">
+        <div class="section-heading centered compact-heading">
+          <h2>Speakers</h2>
+        </div>
+        <div class="speaker-placeholder">
+          <p>Invited speakers and talk titles will be announced soon.</p>
+          <span>TBD</span>
+        </div>
+      </section>
+
+      <section class="section schedule-section" id="schedule">
+        <div class="section-heading centered">
+          <h2>Schedule</h2>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <time>08:30 - 08:40</time>
+            <div>
+              <h3>Opening Remarks</h3>
+              <p>Welcome, tutorial framing, and logistics.</p>
+              <span>Huan Wang</span>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <time>08:40 - 09:20</time>
+            <div>
+              <h3>Approximate Computing I: Model Compression</h3>
+              <span>Speakers TBD</span>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <time>09:20 - 10:30</time>
+            <div>
+              <h3>Approximate Computing II: Token Efficiency</h3>
+              <!-- <p>Token pruning/merging, KV-cache compression, eviction, and speculative decoding.</p> -->
+              <span>Speakers TBD</span>
+            </div>
+          </div>
+          <div class="timeline-item break">
+            <time>10:30 - 10:40</time>
+            <div>
+              <h3>Coffee Break and Discussions</h3>
+              <p>Informal discussion with organizers and speakers.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <time>10:40 - 12:00</time>
+            <div>
+              <h3>Exact Computing: System-Level Optimization</h3>
+              <!-- <p>Serving memory optimization, kernel generation, and heterogeneous computing.</p> -->
+              <span>Speakers TBD</span>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <time>12:00 - 12:20</time>
+            <div>
+              <h3>Closing Remarks</h3>
+              <p>Summary, Q&amp;A.</p>
+              <span>Huan Wang</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section materials-section" id="materials">
+        <div class="section-heading">
+          <p class="section-kicker">Materials</p>
+          <h2>Slides, code, and reading list will be released here.</h2>
+        </div>
+        <div class="materials-grid">
+          <div class="material-card">
+            <span>TBD</span>
+            <strong>Slides</strong>
+            <p>Speaker slides will be posted after the final program is confirmed.</p>
+          </div>
+          <div class="material-card">
+            <span>TBD</span>
+            <strong>GitHub Repository</strong>
+            <p>Recommended papers, code links, and reproducible resources.</p>
+          </div>
+          <div class="material-card">
+            <span>TBD</span>
+            <strong>Reading List</strong>
+            <p>Curated survey and recent work on efficient MLLM inference.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section affiliations-section" aria-label="Affiliated institutions">
+        <div class="section-heading centered compact-heading">
+          <p class="section-kicker">Affiliations</p>
+        </div>
+        <div class="logo-grid">
+          <a class="logo-card wide" href="https://www.westlake.edu.cn/" aria-label="Westlake University">
+            <img src="assets/logos/westlake.png" alt="Westlake University" />
+          </a>
+          <a class="logo-card lab-logo" href="https://westlake-encode-lab.github.io/" aria-label="ENCODE LAB">
+            <img src="assets/logos/EncodeLab_icon.svg" alt="ENCODE LAB" />
+          </a>
+          <a class="logo-card" href="https://about.google/" aria-label="Google">
+            <img src="assets/logos/google.svg" alt="Google" />
+          </a>
+          <a class="logo-card wide" href="https://www.ucmerced.edu/" aria-label="UC Merced">
+            <img src="assets/logos/uc-merced.svg" alt="UC Merced" />
+          </a>
+          <a class="logo-card" href="https://www.nvidia.com/" aria-label="NVIDIA">
+            <img src="assets/logos/nvidia.svg" alt="NVIDIA" />
+          </a>
+          <a class="logo-card wide" href="https://www.wisc.edu/" aria-label="University of Wisconsin-Madison">
+            <img src="assets/logos/uw-madison.svg" alt="University of Wisconsin-Madison" />
+          </a>
+          <a class="logo-card wide" href="https://deepmind.google/" aria-label="Google DeepMind">
+            <img src="assets/logos/google-deepmind.svg" alt="Google DeepMind" />
+          </a>
+          <a class="logo-card icon-logo" href="https://www.apple.com/" aria-label="Apple">
+            <img src="assets/logos/apple.svg" alt="Apple" />
+          </a>
+          <a class="logo-card" href="https://www.microsoft.com/en-us/ai" aria-label="Microsoft AI">
+            <img src="assets/logos/microsoft.svg" alt="Microsoft" />
+          </a>
+          <a class="logo-card" href="https://www.ucf.edu/" aria-label="University of Central Florida">
+            <img src="assets/logos/ucf.png" alt="University of Central Florida" />
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <p>Efficient MLLM Inference via Approximated and Exact Computing</p>
+        <p>ECCV 2026 Tutorial | Sep 8 AM</p>
+      </div>
+      <div>
+        <p>
+          &copy; 2026 <a href="https://kd-tao.github.io/">Keda Tao</a> and
+          <a href="https://westlake-encode-lab.github.io/">ENCODE LAB</a>.
+        </p>
+        <p>
+          Contact:
+          <a href="mailto:wanghuan@westlake.edu.cn">wanghuan@westlake.edu.cn</a>,
+          <a href="mailto:taokeda@westlake.edu.cn">taokeda@westlake.edu.cn</a>,
+          <a href="https://westlake-encode-lab.github.io/">ENCODE LAB</a>
+        </p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
