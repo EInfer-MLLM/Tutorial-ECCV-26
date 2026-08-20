@@ -1,4 +1,4 @@
-# ECCV 2026 Tutorial: Efficient MLLM Inference via Approximated and Exact Computing
+# ECCV 2026 Tutorial: Efficient MLLM Inference via Approximate and Exact Computing
 
 This repository hosts the official webpage and shared materials for the ECCV 2026 tutorial **Efficient MLLM Inference via Approximate and Exact Computing**.
 
