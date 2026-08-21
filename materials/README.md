@@ -68,6 +68,9 @@ The list was compiled by the tutorial speakers and is meant as a curated entry p
 | Fast Inference from Transformers via Speculative Decoding                                                | [Paper](https://arxiv.org/abs/2211.17192) | N/A                                                 |
 | Medusa: Simple LLM Inference Acceleration Framework with Multiple Decoding Heads                         | [Paper](https://arxiv.org/abs/2401.10774) | [GitHub](https://github.com/FasterDecoding/Medusa)  |
 | MagicDec: Breaking the Latency-Throughput Tradeoff for Long Context Generation with Speculative Decoding | [Paper](https://arxiv.org/abs/2408.11049) | [GitHub](https://github.com/Infini-AI-Lab/MagicDec) |
+| EAGLE: Speculative Sampling Requires Rethinking Feature Uncertainty                                      | [Paper](https://arxiv.org/abs/2401.15077) | [GitHub](https://github.com/SafeAILab/EAGLE)        |
+| EAGLE-2: Faster Inference of Language Models with Dynamic Draft Trees                                    | [Paper](https://arxiv.org/abs/2406.16858) | [GitHub](https://github.com/SafeAILab/EAGLE)        |
+| EAGLE-3: Scaling up Inference Acceleration of Large Language Models via Training-Time Test               | [Paper](https://arxiv.org/abs/2503.01840) | [GitHub](https://github.com/SafeAILab/EAGLE)        |
 
 
 
