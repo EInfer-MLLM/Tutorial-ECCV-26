@@ -133,6 +133,17 @@
         width: 150px;
         height: 150px;
       }
+
+      /* Affiliations: keep 5 logos per row, center the last (4-logo) row */
+      .logo-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .logo-grid .logo-card {
+        flex: 0 0 calc((100% - 56px) / 5); /* 5 per row; 56px = 4 gaps × 14px */
+      }
+
     </style>
   </head>
   <body>
