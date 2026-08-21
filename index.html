@@ -24,6 +24,115 @@
       h6 {
         font-family: "Lato", sans-serif !important;
       }
+
+      /* Schedule: per-talk title & abstract toggle */
+      .talk-details {
+        margin-top: 10px;
+      }
+      .talk-details > summary {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        padding: 4px 0;
+        cursor: pointer;
+        list-style: none;
+        color: var(--blue);
+        font-size: 13px;
+        font-weight: 800;
+        letter-spacing: 0.02em;
+        user-select: none;
+        transition: color 150ms ease;
+      }
+      .talk-details > summary:hover {
+        color: var(--red);
+      }
+      .talk-details > summary::-webkit-details-marker {
+        display: none;
+      }
+      .talk-details > summary::before {
+        content: "▸";
+        display: inline-block;
+        color: var(--gold);
+        font-size: 11px;
+        transition: transform 160ms ease;
+      }
+      .talk-details[open] > summary::before {
+        transform: rotate(90deg);
+      }
+      .talk-details .talk-body {
+        margin-top: 10px;
+        padding: 16px 18px;
+        border: 1px solid rgba(23, 78, 166, 0.14);
+        border-left: 3px solid var(--blue);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.62);
+      }
+      .talk-details .talk-title {
+        margin-bottom: 10px;
+        color: var(--blue-2);
+        font-size: 15px;
+        font-weight: 700;
+        line-height: 1.45;
+      }
+      .talk-details .talk-abstract {
+        margin-bottom: 0;
+        color: #475467;
+        font-size: 14px;
+        line-height: 1.65;
+        text-align: justify;
+      }
+      .talk-details .talk-tba {
+        margin-bottom: 0;
+        color: var(--muted);
+        font-size: 14px;
+        font-style: italic;
+      }
+
+      /* Schedule: speaker block (avatar + linked name + affiliation) */
+      .timeline-item .sched-speaker {
+        display: flex;
+        align-items: center;
+        gap: 13px;
+        margin-top: 6px;
+      }
+      .timeline-item .sched-avatar {
+        flex: 0 0 auto;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        object-fit: cover;
+        object-position: center 38%;
+        border: 1px solid rgba(23, 78, 166, 0.16);
+        box-shadow: 0 8px 20px rgba(30, 41, 59, 0.1);
+      }
+      .timeline-item .sched-meta {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+      }
+      .timeline-item .sched-name {
+        color: var(--green);
+        font-size: 15px;
+        font-weight: 800;
+        transition: color 150ms ease;
+      }
+      .timeline-item .sched-name:hover {
+        color: var(--red);
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+      .timeline-item .sched-affil {
+        color: var(--muted);
+        font-size: 13px;
+        font-weight: 600;
+        line-height: 1.35;
+      }
+
+      /* Speakers section: enlarge avatars only (not the Organizers grid) */
+      .speakers-section .avatar {
+        width: 150px;
+        height: 150px;
+      }
     </style>
   </head>
   <body>
@@ -128,7 +237,7 @@
           </article>
           <article class="topic-card">
             <div class="topic-index">03</div>
-            <h3>System-Level Design</h3>
+            <h3>System-Level Designs</h3>
             <p>
               Exact computing methods and inference framework that improve inference throughput and latency without changing
               the computed result.
@@ -176,14 +285,33 @@
             <div>
               <h3>Opening Remarks</h3>
               <!-- <p>Welcome, tutorial framing, and logistics.</p> -->
-              <span>Huan Wang</span>
+              <div class="sched-speaker">
+                <img class="sched-avatar" src="assets/bio/huanwang.jpg" alt="Huan Wang" />
+                <div class="sched-meta">
+                  <a class="sched-name" href="https://huanwang.tech/" target="_blank" rel="noopener">Huan Wang</a>
+                  <span class="sched-affil">Westlake University</span>
+                </div>
+              </div>
             </div>
           </div>
           <div class="timeline-item">
             <time>09:10 - 10:00</time>
             <div>
               <h3>Approximate Computing I: Model Compression</h3>
-              <span>Sathya Narayanan Ravi</span><br>
+              <div class="sched-speaker">
+                <img class="sched-avatar" src="assets/bio/sathya.jpg" alt="Sathya Narayanan Ravi" />
+                <div class="sched-meta">
+                  <a class="sched-name" href="https://sathya-uic.github.io/" target="_blank" rel="noopener">Sathya Narayanan Ravi</a>
+                  <span class="sched-affil">University of Illinois at Chicago</span>
+                </div>
+              </div>
+              <details class="talk-details">
+                <summary>Title &amp; Abstract</summary>
+                <div class="talk-body">
+                  <p class="talk-title">Numerical Optimization for Efficient MLLM Inference: Bridging Approximate and Exact Computing</p>
+                  <p class="talk-abstract">Multimodal Large Language Models (MLLMs) deliver unprecedented capabilities but face severe deployment bottlenecks due to their massive memory footprints and computational demands. While standard efficiency techniques often rely on ad-hoc heuristics—such as naive magnitude pruning or nearest-integer rounding—these methods lack theoretical guarantees and frequently cause unpredictable degradation in complex reasoning tasks. This tutorial discusses the paradigm by reframing model compression, specifically sparsification and quantization, as rigorous, constrained numerical optimization problems. By mapping discrete, NP-hard combinatorial challenges into continuous spaces, we can systematically trade computational exactness for hardware efficiency. The session will cover convex relaxations for structured sparsity (e.g., group $\ell_1$-norm penalties), continuous optimization formulations for local Post-Training Quantization (PTQ) reconstruction, and the mechanics of handling non-smooth step functions in Quantization-Aware Training (QAT) via surrogate gradients and ADMM. Furthermore, the tutorial will explore how embedding exact optimization problems directly into the network architecture via implicit layers allows highly compressed, low-precision models to maintain rigorous mathematical bounds. Attendees will leave equipped with a principled mathematical toolkit to optimize MLLM inference without sacrificing representational capacity or reliability.</p>
+                </div>
+              </details>
             </div>
           </div>
           <div class="timeline-item">
@@ -191,7 +319,23 @@
             <div>
               <h3>Approximate Computing II: Token Efficiency</h3>
               <!-- <p>Token pruning/merging, KV-cache compression, eviction, and speculative decoding.</p> -->
-              <span>Bo Li</span>
+              <div class="sched-speaker">
+                <img class="sched-avatar" src="assets/bio/boli.webp" alt="Bo Li" />
+                <div class="sched-meta">
+                  <a class="sched-name" href="https://www.brianboli.com/inside/" target="_blank" rel="noopener">Bo Li</a>
+                  <span class="sched-affil">Nanyang Technological University</span>
+                </div>
+              </div>
+              <details class="talk-details">
+                <summary>Title &amp; Abstract</summary>
+                <div class="talk-body">
+                  <!-- Fill in when available:
+                  <p class="talk-title">Talk title here</p>
+                  <p class="talk-abstract">Abstract here</p>
+                  -->
+                  <p class="talk-tba">To be announced.</p>
+                </div>
+              </details>
             </div>
           </div>
           <div class="timeline-item break">
@@ -204,16 +348,56 @@
           <div class="timeline-item">
             <time>11:00 - 11:50</time>
             <div>
-              <h3>Exact Computing: System-Level Design</h3>
+              <h3>Exact Computing: System-Level Designs</h3>
               <!-- <p>Serving memory optimization, kernel generation, and heterogeneous computing.</p> -->
-              <span>Chenyang Zhao</span>
+              <div class="sched-speaker">
+                <img class="sched-avatar" src="assets/bio/chenyang.jpg" alt="Chenyang Zhao" />
+                <div class="sched-meta">
+                  <a class="sched-name" href="https://zhaochenyang20.github.io/Chayenne/" target="_blank" rel="noopener">Chenyang Zhao</a>
+                  <span class="sched-affil">RadixArk &amp; LMSYS.Org</span>
+                </div>
+              </div>
+              <details class="talk-details">
+                <summary>Title &amp; Abstract</summary>
+                <div class="talk-body">
+                  <p class="talk-title">
+                    Serving Omni-Modal Models at Scale: Systems Design and Lessons from SGLang Omni
+                  </p>
+                  <p class="talk-abstract">
+                    A request to a modern omni-modal model no longer runs through a single
+                    autoregressive loop: it traverses heterogeneous stages — modality encoders,
+                    thinkers, talkers, autoregressive or diffusion generators, codec decoders, and
+                    streaming vocoders. Existing systems fix how these stages execute: monolithic
+                    engines force stages with different bottlenecks under one scheduler, while
+                    stage-graph systems hard-wire full disaggregation, paying orchestration costs on
+                    exactly the edges that need per-step feedback. This talk presents SGLang Omni, an
+                    open-source serving framework that decouples execution structure from stage
+                    topology and derives it instead from three measurable characteristics: a stage's
+                    bottleneck resource selects its execution engine, the synchronization granularity
+                    of each inter-stage dependency decides whether the boundary is fused or split, and
+                    per-replica device saturation sets replica counts and same-device colocation. A
+                    model declares its topology once and is served behind OpenAI-compatible chat and
+                    speech APIs; every structural decision remains a deployment-time configuration
+                    rather than an architectural change. Across representative TTS models, SGLang Omni
+                    improves request throughput by 2.2×–3.05× over dedicated tuned baseline at high
+                    concurrency with comparable or better intelligibility, sustaining real-time
+                    generation where baselines fall behind.
+                  </p>
+                </div>
+              </details>
             </div>
           </div>
           <div class="timeline-item">
             <time>11:50 - 12:00</time>
             <div>
               <h3>QA and Closing Remarks</h3>
-              <span>Huan Wang</span>
+              <div class="sched-speaker">
+                <img class="sched-avatar" src="assets/bio/huanwang.jpg" alt="Huan Wang" />
+                <div class="sched-meta">
+                  <a class="sched-name" href="https://huanwang.tech/" target="_blank" rel="noopener">Huan Wang</a>
+                  <span class="sched-affil">Westlake University</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
