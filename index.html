@@ -413,14 +413,20 @@
                 <p class="talk-abstract">Deploying massive Multimodal Large Language Models (MLLMs) is fundamentally
                   restricted by memory bandwidth and compute bottlenecks during inference. In this tutorial, we will
                   discuss these constraints by detailing a synergistic framework of approximate model compression across
-                  three distinct axes: The Precision Axis (Quantization): Alleviates memory bandwidth limits by
+                  three distinct axes:
+
+                  (1) The Precision Axis (Quantization): Alleviates memory bandwidth limits by
                   compressing weights and KV
                   caches into lower bit-widths using methods like AWQ, GPTQ, and TurboQuant.
-                  The Structural Axis (Pruning): Lowers the required arithmetic workload (FLOPs) per token by
+
+                  (2) The Structural Axis (Pruning): Lowers the required arithmetic workload (FLOPs) per token by
                   permanently removing redundant parameters via Taylor-based Vision Transformer pruning and rank
-                  constrained pruning. The Data Axis (Token Merging): Addresses on the $\mathcal{O}(N^2)$ compute
+                  constrained pruning.
+
+                  (3) The Data Axis (Token Merging): Addresses on the $\mathcal{O}(N^2)$ compute
                   bottleneck of long visual
                   contexts by dynamically fusing redundant tokens to shrink input sequence length without retraining.
+
                   Combining these techniques, we can execute 70B+ parameter MLLMs efficiently while maintaining visual
                   reasoning capabilities as desired.</p>
               </div>
