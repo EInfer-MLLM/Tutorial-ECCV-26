@@ -408,23 +408,21 @@
             <details class="talk-details">
               <summary>Title &amp; Abstract</summary>
               <div class="talk-body">
-                <p class="talk-title">Numerical Optimization for Efficient MLLM Inference: Bridging Approximate and
-                  Exact Computing</p>
-                <p class="talk-abstract">Multimodal Large Language Models (MLLMs) deliver unprecedented capabilities but
-                  face severe deployment bottlenecks due to their massive memory footprints and computational demands.
-                  While standard efficiency techniques often rely on ad-hoc heuristics—such as naive magnitude pruning
-                  or nearest-integer rounding—these methods lack theoretical guarantees and frequently cause
-                  unpredictable degradation in complex reasoning tasks. This tutorial discusses the paradigm by
-                  reframing model compression, specifically sparsification and quantization, as rigorous, constrained
-                  numerical optimization problems. By mapping discrete, NP-hard combinatorial challenges into continuous
-                  spaces, we can systematically trade computational exactness for hardware efficiency. The session will
-                  cover convex relaxations for structured sparsity (e.g., group $\ell_1$-norm penalties), continuous
-                  optimization formulations for local Post-Training Quantization (PTQ) reconstruction, and the mechanics
-                  of handling non-smooth step functions in Quantization-Aware Training (QAT) via surrogate gradients and
-                  ADMM. Furthermore, the tutorial will explore how embedding exact optimization problems directly into
-                  the network architecture via implicit layers allows highly compressed, low-precision models to
-                  maintain rigorous mathematical bounds. Attendees will leave equipped with a principled mathematical
-                  toolkit to optimize MLLM inference without sacrificing representational capacity or reliability.</p>
+                <p class="talk-title">The Trinity of MLLM Compression — Advanced PTQ, Pruning, and Context Compression
+                </p>
+                <p class="talk-abstract">Deploying massive Multimodal Large Language Models (MLLMs) is fundamentally
+                  restricted by memory bandwidth and compute bottlenecks during inference. In this tutorial, we will
+                  discuss these constraints by detailing a synergistic framework of approximate model compression across
+                  three distinct axes: The Precision Axis (Quantization): Alleviates memory bandwidth limits by
+                  compressing weights and KV
+                  caches into lower bit-widths using methods like AWQ, GPTQ, and TurboQuant.
+                  The Structural Axis (Pruning): Lowers the required arithmetic workload (FLOPs) per token by
+                  permanently removing redundant parameters via Taylor-based Vision Transformer pruning and rank
+                  constrained pruning. The Data Axis (Token Merging): Addresses on the $\mathcal{O}(N^2)$ compute
+                  bottleneck of long visual
+                  contexts by dynamically fusing redundant tokens to shrink input sequence length without retraining.
+                  Combining these techniques, we can execute 70B+ parameter MLLMs efficiently while maintaining visual
+                  reasoning capabilities as desired.</p>
               </div>
             </details>
           </div>
