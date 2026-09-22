@@ -26,7 +26,6 @@ For the full organizer list, affiliations, and homepage links, please see the tu
 - **Date:** September 8, 2026
 - **Time:** Morning session
 - **Location:** Malmö, Sweden
-- **Room:** TBD
 
 ## Materials
 
@@ -34,8 +33,7 @@ Tutorial materials are available in this repository and will continue to be upda
 
 - Talk slides: see [Talk Materials](#talk-materials)
 - Recommended reading: [Efficient LLM / MLLM Inference](materials/README.md)
-- Code and demos: TBD
-- Additional resources: TBD
+- Code and demos: [WikiText ERC-SVD Llama 2 7B demo notebook](materials/wikitext-erc-svd-llama2-7b-hf.ipynb)
 
 ## Contact
 
